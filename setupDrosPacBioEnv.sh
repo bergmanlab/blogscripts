@@ -11,7 +11,6 @@ rm chromFa.tar.gz chr*.fa
 echo "installing PacBio smrtanalysis suite"
 wget http://programs.pacificbiosciences.com/l/1652/2013-11-05/2tqk4f
 bash smrtanalysis-2.1.1-centos-6.3.run --extract-only --rootdir ./
-source install/smrtanalysis-2.1.1.128549/etc/setup.sh
 rm smrtanalysis-2.1.1-centos-6.3.run
 
 #install samtools
