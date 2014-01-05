@@ -37,4 +37,4 @@ qsub -b y -cwd -N tar_Dro5_29NOV2013_402.tgz -hold_jid wget_Dro5_29NOV2013_402.t
 qsub -b y -cwd -N tar_Dro6_1DEC2013_403.tgz  -hold_jid wget_Dro6_1DEC2013_403.tgz  "tar -xvzf Dro6_1DEC2013_403.tgz"
 
 #delete .tar archives and md5 files
-qsub -V -b y -cwd -N rm_tar -hold_jid tar_Dro1_24NOV2013_398.tgz,tar_Dro2_25NOV2013_399.tgz,tar_Dro3_26NOV2013_400.tgz,tar_Dro4_28NOV2013_401.tgz,tar_Dro5_29NOV2013_402.tgz,tar_Dro6_1DEC2013_403.tgz "rm Dro*.tgz Dro*.md5"
+qsub -V -b y -cwd -N rm_tar_md -hold_jid tar_Dro1_24NOV2013_398.tgz,tar_Dro2_25NOV2013_399.tgz,tar_Dro3_26NOV2013_400.tgz,tar_Dro4_28NOV2013_401.tgz,tar_Dro5_29NOV2013_402.tgz,tar_Dro6_1DEC2013_403.tgz "rm Dro*.tgz Dro*.md5"

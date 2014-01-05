@@ -20,8 +20,8 @@ done
 #merge bam files from individual cells and index merged bam file
 echo "merging and indexing bam files"
 holdlist=`printf -- '%s,' "${samples[@]}"`
-input="$outputdir/m131*_p0*.bam"
-output="$outputdir/dm3PacBio.bam"
+input="m131*_p0*.bam"
+output="dm3PacBio.bam"
 qsub -V -b y -cwd -N merge_pacbio -hold_jid $holdlist "samtools-0.1.19/samtools merge $output $input"
 qsub -V -b y -cwd -N index_pacbio -hold_jid merge_pacbio "samtools-0.1.19/samtools index $output"
 
