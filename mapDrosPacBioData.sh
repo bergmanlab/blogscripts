@@ -13,7 +13,7 @@ do
  output2="${sample}.unaligned"
  output3="${sample}"
  qsub -l core=12 -V -b y -cwd -N blasr_${sample} "install/smrtanalysis-2.1.1.128549/analysis/bin/blasr $input dm3.fa -bestn 1 -nproc 8 -minPctIdentity 80 -sam -out $output1 -unaligned $output2"
- qsub -V -b y -cwd -N sort_${sample} -hold_jid blasr_${sample} "samtools-0.1.19/samtools view -bS $output1 | samtools-0.1.19/samtools sort - $output3"
+ qsub -V -b y -cwd -N sort_${sample} -hold_jid blasr_${sample} "install/smrtanalysis-2.1.1.128549/analysis/bin/samtools view -bS $output1 | install/smrtanalysis-2.1.1.128549/analysis/bin/samtools sort - $output3"
  samples+=(sort_${sample})
 done
 
@@ -22,8 +22,8 @@ echo "merging and indexing bam files"
 holdlist=`printf -- '%s,' "${samples[@]}"`
 input="m131*_p0*.bam"
 output="dm3PacBio.bam"
-qsub -V -b y -cwd -N merge_pacbio -hold_jid $holdlist "samtools-0.1.19/samtools merge $output $input"
-qsub -V -b y -cwd -N index_pacbio -hold_jid merge_pacbio "samtools-0.1.19/samtools index $output"
+qsub -V -b y -cwd -N merge_pacbio -hold_jid $holdlist "install/smrtanalysis-2.1.1.128549/analysis/bin/samtools merge $output $input"
+qsub -V -b y -cwd -N index_pacbio -hold_jid merge_pacbio "install/smrtanalysis-2.1.1.128549/analysis/bin/samtools index $output"
 
 #merge unmapped reads and remove .sam, .bam and .unaligned files from individual cells
 echo "merging unmapped reads and cleaning up"
