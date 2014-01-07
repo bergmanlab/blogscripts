@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#add blasr to your working environment
-source install/smrtanalysis-2.1.1.128549/etc/setup.sh
-
 #map .bax.h5 files from individual PacBio cells to dm3 using blasr
 echo "mapping .bax.h5 files to dm3"
 samples=()
