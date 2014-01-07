@@ -1,6 +1,6 @@
 coverage<-read.table("dm3.genome.coverage", header=F)
 a<-coverageByChrom<-split(coverage, coverage$V1)
-pdf(filename = "dm3PacBioCoverage.pdf")
+pdf(file = "dm3PacBioCoverage.pdf")
 par(mfrow=c(3,2), mar=c(4,4,1,2))
 plot(a$chrX$V2,a$chrX$V3/22422827, xlim=c(0,200), ylim=c(0,0.05), type="l", xlab="X chromosome depth", ylab="frequency")
 plot(a$chr4$V2,a$chr4$V3/1351857, xlim=c(0,200), type="l", ylim=c(0,0.05), xlab="4th chromosome depth", ylab="frequency")
