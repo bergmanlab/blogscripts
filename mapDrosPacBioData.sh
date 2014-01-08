@@ -9,7 +9,7 @@ do
  output1="${sample}.sam"
  output2="${sample}.unaligned"
  output3="${sample}"
- qsub -l core=12 -V -b y -cwd -N blasr_${sample} "install/smrtanalysis-2.1.1.128549/analysis/bin/blasr $input dm3.fa -bestn 1 -nproc 8 -minPctIdentity 80 -sam -out $output1 -unaligned $output2"
+ qsub -l core=12 -V -b y -cwd -N blasr_${sample} "install/smrtanalysis-2.1.1.128549/analysis/bin/blasr $input dm3.fa -bestn 1 -nproc 12 -minPctIdentity 80 -sam -out $output1 -unaligned $output2"
  qsub -V -b y -cwd -N sort_${sample} -hold_jid blasr_${sample} "install/smrtanalysis-2.1.1.128549/analysis/bin/samtools view -bS $output1 | install/smrtanalysis-2.1.1.128549/analysis/bin/samtools sort - $output3"
  samples+=(sort_${sample})
 done
