@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#map .bax.h5 files from individual PacBio cells to dm3 using blasr
-echo "mapping .bax.h5 files to dm3"
+#map .bax.h5 files from individual PacBio cells to Release 5 using blasr
+echo "mapping .bax.h5 files to Release 5"
 samples=()
 for input in `ls Dro*/*/*/*bax.h5` 
 do
