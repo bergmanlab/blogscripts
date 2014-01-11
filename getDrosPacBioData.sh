@@ -2,21 +2,21 @@
 
 #get compressed .tar archives of D. melanogaster PacBio runs
 echo "get tar archives of PacBio runs"
-qsub -b y -cwd -N wget_Dro1_24NOV2013_398.tgz "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/Dro1_24NOV2013_398.tgz"
-qsub -b y -cwd -N wget_Dro2_25NOV2013_399.tgz "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/Dro2_25NOV2013_399.tgz"
-qsub -b y -cwd -N wget_Dro3_26NOV2013_400.tgz "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/Dro3_26NOV2013_400.tgz"
-qsub -b y -cwd -N wget_Dro4_28NOV2013_401.tgz "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/Dro4_28NOV2013_401.tgz"
-qsub -b y -cwd -N wget_Dro5_29NOV2013_402.tgz "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/Dro5_29NOV2013_402.tgz"
-qsub -b y -cwd -N wget_Dro6_1DEC2013_403.tgz  "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/Dro6_1DEC2013_403.tgz"
+qsub -b y -cwd -N wget_Dro1_24NOV2013_398.tgz "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/raw/Dro1_24NOV2013_398.tgz"
+qsub -b y -cwd -N wget_Dro2_25NOV2013_399.tgz "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/raw/Dro2_25NOV2013_399.tgz"
+qsub -b y -cwd -N wget_Dro3_26NOV2013_400.tgz "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/raw/Dro3_26NOV2013_400.tgz"
+qsub -b y -cwd -N wget_Dro4_28NOV2013_401.tgz "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/raw/Dro4_28NOV2013_401.tgz"
+qsub -b y -cwd -N wget_Dro5_29NOV2013_402.tgz "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/raw/Dro5_29NOV2013_402.tgz"
+qsub -b y -cwd -N wget_Dro6_1DEC2013_403.tgz  "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/raw/Dro6_1DEC2013_403.tgz"
 
 #get md5sums for PacBio .tar archives
 echo "getting md5sums for PacBio tar archives"
-qsub -b y -cwd -N wget_Dro1_24NOV2013_398.md5 "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/Dro1_24NOV2013_398.md5"
-qsub -b y -cwd -N wget_Dro2_25NOV2013_399.md5 "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/Dro2_25NOV2013_399.md5"
-qsub -b y -cwd -N wget_Dro3_26NOV2013_400.md5 "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/Dro3_26NOV2013_400.md5"
-qsub -b y -cwd -N wget_Dro4_28NOV2013_401.md5 "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/Dro4_28NOV2013_401.md5"
-qsub -b y -cwd -N wget_Dro5_29NOV2013_402.md5 "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/Dro5_29NOV2013_402.md5"
-qsub -b y -cwd -N wget_Dro6_1DEC2013_403.md5  "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/Dro6_1DEC2013_403.md5"
+qsub -b y -cwd -N wget_Dro1_24NOV2013_398.md5 "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/raw/Dro1_24NOV2013_398.md5"
+qsub -b y -cwd -N wget_Dro2_25NOV2013_399.md5 "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/raw/Dro2_25NOV2013_399.md5"
+qsub -b y -cwd -N wget_Dro3_26NOV2013_400.md5 "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/raw/Dro3_26NOV2013_400.md5"
+qsub -b y -cwd -N wget_Dro4_28NOV2013_401.md5 "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/raw/Dro4_28NOV2013_401.md5"
+qsub -b y -cwd -N wget_Dro5_29NOV2013_402.md5 "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/raw/Dro5_29NOV2013_402.md5"
+qsub -b y -cwd -N wget_Dro6_1DEC2013_403.md5  "wget https://s3.amazonaws.com/datasets.pacb.com/2014/Drosophila/raw/Dro6_1DEC2013_403.md5"
 
 #verify .tar archives have been downloaded properly
 echo "verifying archives have been downloaded properly"
