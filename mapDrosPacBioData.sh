@@ -8,7 +8,7 @@ do
  sample=`basename $input .bax.h5`
  output1="${sample}.sam"
  output2="${sample}.unaligned"
- qsub -l core=12 -V -b y -cwd -N blasr_${sample} "install/smrtanalysis-2.1.1.128549/analysis/bin/blasr $input dm3.fa -bestn 1 -nproc 12 -minPctIdentity 80 -sam -out $output1 -unaligned $output2"
+ qsub -l cores=12 -V -b y -cwd -N blasr_${sample} "install/smrtanalysis-2.1.1.128549/analysis/bin/blasr $input dm3.fa -bestn 1 -nproc 12 -minPctIdentity 80 -sam -out $output1 -unaligned $output2"
  qsub -V -b y -cwd -N sort_${sample} -hold_jid blasr_${sample} "install/smrtanalysis-2.1.1.128549/analysis/bin/samtools view -bS $output1 | install/smrtanalysis-2.1.1.128549/analysis/bin/samtools sort - $sample"
  samples+=(sort_${sample})
 done
