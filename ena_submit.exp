@@ -8,8 +8,6 @@ set files [open $fofn]
 set subs [read $files]
 
 set direxist 0
-set ident ""
- 
 set timeout -1
  
 foreach line [split $subs \n] {
