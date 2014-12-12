@@ -14,10 +14,7 @@ foreach line [split $subs \n] {
   if { "" != $line } {
     set seqfile [exec basename $line]
     set lst [split $line "/"]
- 
-    if { "" != $ident } {
-      spawn ascp -QT -l80M -d $line $dropbox@webin.ebi.ac.uk:.
-    }
+    spawn ascp -QT -l80M -d $line $dropbox@webin.ebi.ac.uk:.
     expect "Password:"
     send "$pass\r"
     expect eof
