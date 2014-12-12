@@ -1,0 +1,27 @@
+#!/usr/bin/expect
+ 
+set fofn [lindex $argv 0]
+set dropbox [lindex $argv 1]
+set pass [lindex $argv 2]
+
+set files [open $fofn]
+set subs [read $files]
+
+set direxist 0
+set ident ""
+ 
+set timeout -1
+ 
+foreach line [split $subs \n] {
+  if { "" != $line } {
+    set seqfile [exec basename $line]
+    set lst [split $line "/"]
+ 
+    if { "" != $ident } {
+      spawn ascp -QT -l80M -d $line $dropbox@webin.ebi.ac.uk:.
+    }
+    expect "Password:"
+    send "$pass\r"
+    expect eof
+  }
+}
